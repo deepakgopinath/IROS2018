@@ -1,0 +1,75 @@
+MISC:
+
+People =- Joseph Lizier, Daniel Polani, Univ of Hertsfordshire Group. Info Theoretic approach to social interations, HCI
+
+https://github.com/jlizier/jidt - MI toolbox in Java
+http://www.cs.man.ac.uk/~pococka4/MIToolbox.html
+
+http://lizier.me/joseph/
+https://link.springer.com/book/10.1007/978-3-319-43222-9#toc -  TE book by joseph lizier READ!!!
+
+
+IROS Notes:
+
+The JIDT toolbox looks promising. Understanding properly how these tools can be used to answer the question that I am inetrested in. 
+Conitnuous data have issues. Look into that carefully. 
+
+Thoughts:
+
+Does HRI exhibit emergent behavior? What are the minimum requirements for a coupled system to show emergent behavior? Is time-varying dynamics of the sub-components a requirement. 
+
+Once we understand information dynamics can we shape the information dynamics. Can we then describe seamlessness, intuitiveness, higher user-satisfaction, etc in terms of maximizing information dynamics of certain metrics such as mutual information or transfer entropy, for example? 
+
+The dynamical system that is being controlled is the information dynamical system? And the 'buttons' and 'knobs' you touch are indiretly connected to HRI system? 
+
+The probability distribution over intent can be thought of existing on a information geometric manifold. Phase space trajectories in this space correspond to how pdfs evolve. can we shape this evolution in ways we want. Should that guide the design of HRI schemes. 
+
+In the context of HRI, global metrics can help in overall characterization of the human, human-robot system etc. Local information dynamics is probably what will help in real-time adaptation of autonomy?
+
+
+From Alex:
+
+Get demo data (user control + optimal control signal) and observe info flow to test how the user interacts with the optimal controller. 
+
+
+Narrative for the paper:
+
+This paper is probably going to be the first step toward an information theoretic characterization of human robot interaction. More specifically, we are interested in characterization of information flow between the human robot interaction. Seamlessness and intuitiveness of a human robot system depends heavily on how well each party is able to communicate one's own and infer the other's intention. Intentions can be expressed via motion cues, or control commands cues. Typical human-robot systems use perception systems and intent inference schemes but is unaware of the quality, quantity and pertinencce of information being transferred. 
+
+
+How to bring the connection to human-human interaction. How HRI should strive for that kind of fluidity. Quantifying 
+humans and robot influence and interact each other in a circular fashion. 
+
+
+
+TIMELINE:
+
+1. First Draft  - Feb 15 (hoping to have some results in here)
+2. Second Draft, Grammar pass (for Alex) - Feb 20
+3. Brenna Draft - Feb 25
+4. Submission - March 1
+
+
+
+##############################################################################################
+
+Abstract:
+
+Understanding the dynamics of information flow and exchange between humans and robots is critical for the quantification and design of seamless, fluid and intuitive human robot interaction paradigms. In this paper we characterize the information dynamics of human-robot interaction in a shared-control assistive robotic manipulation setting using the information theoretic concept of transfer entropy. Specifically we consider unidirectional transfer entropy between the human control command signal and the autonomy control command. Transfer entropy is a metric that captures the directional flow of information between two systems and measures how much information the source provides about the transitions in the target. Preliminary results indicate the presence of information flow from the robot to the human and not viceversa (this is VERY preliminary). This indicates that extensive training is important for humans to be able to successfully cooperate and coordinate with robots in task execution. 
+
+
+
+
+
+
+
+
+JIDT notes:
+
+EntropyCalculatorJava class. 
+
+rows refer to the number of oservations. 
+stateCount is the histogram. 
+
+
+ destHistoryEmbedLength is the history length - k in the Schrieber eq
