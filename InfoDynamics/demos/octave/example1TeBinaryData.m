@@ -22,7 +22,7 @@
 
 % Change location of jar to match yours:
 % javaaddpath('../../infodynamics.jar');
-javaaddpath('/home/deepak/Desktop/Research/PaperSubmissions/IROS2018/InfoDynamics/infodynamics.jar')
+javaaddpath('/home/deepak/Desktop/PaperSubmissions/IROS2018/InfoDynamics/infodynamics.jar')
 % Generate some random binary data.
 % Note that we need the *1 to make this a number not a Boolean,
 %  otherwise this will not work (as it cannot match the method signature)

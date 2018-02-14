@@ -1,7 +1,7 @@
 clear all; clc; close all;
 %%
 
-javaaddpath('/home/deepak/Desktop/Research/PaperSubmissions/IROS2018/InfoDynamics/infodynamics.jar');
+javaaddpath('/home/deepak/Desktop/PaperSubmissions/IROS2018/InfoDynamics/infodynamics.jar');
 load('data_file.mat');
 num_trials = size(alpha_all, 1);
 num_sub = 8;
@@ -25,12 +25,12 @@ for i=1:num_trials
         fprintf('#############################\n');
         fprintf('Subject ID is %d\n', index)
     end
-    %prepare source and destination data. 
-    if interface_all{i} == ha_id %if it is headarray
-        continue
-    end
+%     %prepare source and destination data. 
+%     if interface_all{i} == ha_id %if it is headarray
+%         continue
+%     end
     
-    alpha = alpha_all{i}; alpha = (alpha > 0)*1;
+    alpha = alpha_all{i}; %alpha = (alpha > 0)*1;
     gv = gv_all{i}; gv =  gv'; gv(:, end-1:end) = [];
     gv = repmat(alpha, 1, size(gv, 2)).*gv;
     uv = uv_all{i}; uv = uv'; uv = uv(:, 1:end-1);
@@ -43,6 +43,7 @@ for i=1:num_trials
     sourceDim = size(sourceMVArray, 2);  
     destDim = size(destMVArray, 2);
     
+    teCalc.setProperty("NOISE_LEVEL_TO_ADD", "0.00000001");
     teCalc.initialise(1, sourceDim,destDim); % Use history length 1 (Schreiber k=1)
     teCalc.setProperty('k', '4'); % Use Kraskov parameter K=4 for 4 nearest points
     teCalc.setObservations(octaveToJavaDoubleMatrix(sourceMVArray), octaveToJavaDoubleMatrix(destMVArray));
@@ -54,12 +55,12 @@ for i=1:num_trials
     plot(ts, alpha_all{i}, 'm', 'LineWidth', 1.5);
     scatter(ms, 0.5*ones(length(ms), 1), 'filled');
     fprintf('The transfer entropy from robot alpha to presence of user vel is %f\n', total_TE(i));
-    repeats = 500;
-    nullDist = teCalc.computeSignificance(repeats);
-    distribution = javaMatrixToOctave(nullDist.distribution);
-    pvalue = sum(distribution >= nullDist.actualValue)/length(distribution);
-    
-    total_TE_onlyalpha(i) = mean(local_TE(alpha == 1));
+%     repeats = 500;
+%     nullDist = teCalc.computeSignificance(repeats);
+%     distribution = javaMatrixToOctave(nullDist.distribution);
+%     pvalue = sum(distribution >= nullDist.actualValue)/length(distribution);
+%     
+%     total_TE_onlyalpha(i) = mean(local_TE((alpha > 0)*1 == 1));
     
 %     %initialize TE calc for every trial. (Later we can pool together each
 %     %user's signal together. 
@@ -76,10 +77,10 @@ for i=1:num_trials
 %     plot(ts, sourceMVArray, 'r', 'LineWidth', 1.5);  plot(ts, destMVArray, 'b', 'LineWidth', 1.5);
 %     plot(ts, alpha_all{i}, 'm', 'LineWidth', 1.5);
 %     scatter(ms, 0.5*ones(length(ms), 1), 'filled');
-    fprintf('The transfer entropy from robot alpha to presence of user vel is %f\n', total_TE(i));
-    fprintf('The mean transfer entropy from robot alpha to presence of user vel for nonzero alpha is %f\n', mean(local_TE(alpha == 1)));
+%     fprintf('The transfer entropy from robot alpha to presence of user vel is %f\n', total_TE(i));
+%     fprintf('The mean transfer entropy from robot alpha to presence of user vel for nonzero alpha is %f\n', total_TE_onlyalpha(i));
     
-%     close all;
+    close all;
 end
 mean_TE = mean(total_TE(init_sub_markers(index): sub_markers(index)));
 subjectwise_total_TEs{index} = total_TE(init_sub_markers(index): sub_markers(index));
