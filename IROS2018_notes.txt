@@ -51,6 +51,18 @@ TIMELINE:
 
 
 
+Analysis Notes:
+
+Data preprocessing notes:
+
+1. 
+1. Just look at joystick. Look at active information storage multivariate. Figure out the best embedding. Use it in TEMultivariate calculator. Do surrogate analysis for each trial? DONE. Pipeline is there. 
+
+2. Try ensemble method. add each trial as an observation and compute TE across all available data for a subject - TODO. Pool all data from each subject to analysis. 
+
+3. Read Kraskov paper. Read other papers to see how data is reported. 
+   a. Correlations between the metrics and other task related metrics. Such as task compleition time for each trial and TE for each trial?
+
 ##############################################################################################
 
 Abstract:
@@ -73,3 +85,25 @@ stateCount is the histogram.
 
 
  destHistoryEmbedLength is the history length - k in the Schrieber eq
+
+
+
+
+***********************************************************
+***********************************************************
+***********************************************************
+***********************************************************
+***********************************************************
+***********************************************************
+PAPER STRUCTURE:
+
+
+ABSTRACT
+INTRODUCTION:
+RELATED WORK:
+MATHEMATICAL DETAIL:
+EXPERIMENTAL METHODS
+RESULTS
+DISCUSSION
+CONCLUSION
+REFERENCES

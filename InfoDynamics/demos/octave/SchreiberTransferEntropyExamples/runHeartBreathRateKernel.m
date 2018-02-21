@@ -83,7 +83,7 @@ function [teHeartToBreath, teBreathToHeart] = runHeartBreathRateKernel(rs)
 		teHeartToBreath(rIndex) = teCalc.computeAverageLocalOfObservationsWithCorrection();
 		
 		% Perform calculation for breath -> heart (lag 1)
-		teCalc.initialise(1, r); % Use history length 1 (Schreiber k=1), kernel width of r normalised units
+		teCalc.initialise(3, r); % Use history length 1 (Schreiber k=1), kernel width of r normalised units
 		teCalc.setObservations(chestVol, heart);
 		% teBreathToHeart(rIndex) = teCalc.computeAverageLocalOfObservations();
 		% Schreiber confirmed that example 2 was bias corrected (though it had no 

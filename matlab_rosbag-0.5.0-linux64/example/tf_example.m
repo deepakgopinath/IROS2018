@@ -5,7 +5,7 @@ tree = ros.TFTree(bag);
 tree.allFrames()
 
 %% Figure out where turtle1 was in the world frame throughout the experiment
-times = linspace(tree.time_begin + 1, tree.time_end - 1);
+times = linspace(tree.time_begin + 1 , tree.time_end - 1);
 world_frame = 'world';
 turtle1_frame = 'turtle1';
 use_2d = true;

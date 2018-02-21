@@ -517,12 +517,12 @@ public class TransferEntropyCalculatorDiscrete extends ContextOfPastMeasureCalcu
 	 */
 	public void addObservations(int states[][], int j) {
 
-		int timeSteps = states.length;
+		int timeSteps = states.length; // number of rows. in the demo example, this is 2. 
 		if (timeSteps - startObservationTime <= 0) {
 			// No observations to add
 			return;
 		}
-		int variables = states[0].length; // number of columns
+		int variables = states[0].length; // number of columns. in the demo example this is 100. 
 		// increment the count of observations:
 		if (periodicBoundaryConditions) {
 			observations += (timeSteps - startObservationTime)*variables; 			

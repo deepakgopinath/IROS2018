@@ -26,11 +26,15 @@ javaaddpath('/home/deepak/Desktop/PaperSubmissions/IROS2018/InfoDynamics/infodyn
 % Generate some random binary data.
 % Note that we need the *1 to make this a number not a Boolean,
 %  otherwise this will not work (as it cannot match the method signature)
-sourceArray=(rand(1000,1)>0.2)*1; 
+sourceArray=(rand(1000,1)>0.2)*1;  %number of rows is the number of time steps and number of columns is the dimension. This is univariate. 
 destArray = [0; sourceArray(1:999)];
 sourceArray2=(rand(1000,1)>0.2)*1;
 % Create a TE calculator and run it:
-teCalc=javaObject('infodynamics.measures.discrete.TransferEntropyCalculatorDiscrete', 2, 1);
+teCalc=javaObject('infodynamics.measures.discrete.TransferEntropyCalculatorDiscrete', 2, 1); %first argument is the base - number of discrete levels in the variable and second argument is taregt embedding length, which is 'k' in Schreiber notation. 
+%Note that this variable is NOT called 'k' in the class. Not to be confused
+%with the member variable 'k' used in Kraskov classes which correspond to
+%the number of nearest neighbors. 
+
 teCalc.initialise();
 % Since we have simple arrays of ints, we can directly pass these in:
 teCalc.addObservations(sourceArray, destArray);

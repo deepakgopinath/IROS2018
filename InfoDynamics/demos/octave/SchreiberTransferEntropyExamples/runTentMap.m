@@ -55,9 +55,9 @@ function teValues = runTentMap()
 			% Construct the map matrix with maps in columns, time in rows
 
 			% Initialise first row randomly
-			transientMapValues = rand(1, M);
+			transientMapValues = rand(1, M); %Tent map is M-dimensional. Each dimension can be thought of as a randomm variable evolving in time. 
 			% Run transients - no need to keep the transient values
-			for t = 2 : transientLength
+			for t = 2 : transientLength %to reach stready state behavior. 
 				transientMapValues = tentMap(coupling .* [ transientMapValues(M) , transientMapValues(1:M-1)] + ...
 							     (1 - coupling) .* transientMapValues);
 			end

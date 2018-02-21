@@ -1,0 +1,203 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{shannon2001mathematical}
+C.~E. Shannon, ``A mathematical theory of communication,'' \emph{ACM SIGMOBILE
+  Mobile Computing and Communications Review}, vol.~5, no.~1, pp. 3--55, 2001.
+
+\bibitem{maasoumi1993compendium}
+E.~Maasoumi~1, ``A compendium to information theory in economics and
+  econometrics,'' \emph{Econometric reviews}, vol.~12, no.~2, pp. 137--181,
+  1993.
+
+\bibitem{wibral2014directed}
+M.~Wibral, R.~Vicente, and J.~T. Lizier, \emph{Directed information measures in
+  neuroscience}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2014.
+
+\bibitem{kleeman2007information}
+R.~Kleeman, ``Information flow in ensemble weather predictions,'' \emph{Journal
+  of the atmospheric sciences}, vol.~64, no.~3, pp. 1005--1016, 2007.
+
+\bibitem{butail2014information}
+S.~Butail, F.~Ladu, D.~Spinello, and M.~Porfiri, ``Information flow in
+  animal-robot interactions,'' \emph{Entropy}, vol.~16, no.~3, pp. 1315--1330,
+  2014.
+
+\bibitem{hlavavckova2007causality}
+K.~Hlav{\'a}{\v{c}}kov{\'a}-Schindler, M.~Palu{\v{s}}, M.~Vejmelka, and
+  J.~Bhattacharya, ``Causality detection based on information-theoretic
+  approaches in time series analysis,'' \emph{Physics Reports}, vol. 441,
+  no.~1, pp. 1--46, 2007.
+
+\bibitem{ashby1991requisite}
+W.~R. Ashby, ``Requisite variety and its implications for the control of
+  complex systems,'' in \emph{Facets of Systems Science}.\hskip 1em plus 0.5em
+  minus 0.4em\relax Springer, 1991, pp. 405--417.
+
+\bibitem{wasson2003user}
+G.~Wasson, P.~Sheth, M.~Alwan, K.~Granata, A.~Ledoux, and C.~Huang, ``User
+  intent in a shared control framework for pedestrian mobility aids,'' in
+  \emph{Intelligent Robots and Systems, 2003.(IROS 2003). Proceedings. 2003
+  IEEE/RSJ International Conference on}, vol.~3.\hskip 1em plus 0.5em minus
+  0.4em\relax IEEE, 2003, pp. 2962--2967.
+
+\bibitem{kalakrishnan2011stomp}
+M.~Kalakrishnan, S.~Chitta, E.~Theodorou, P.~Pastor, and S.~Schaal, ``Stomp:
+  Stochastic trajectory optimization for motion planning,'' in \emph{Robotics
+  and Automation (ICRA), 2011 IEEE International Conference on}.\hskip 1em plus
+  0.5em minus 0.4em\relax IEEE, 2011, pp. 4569--4574.
+
+\bibitem{schreiber2000measuring}
+T.~Schreiber, ``Measuring information transfer,'' \emph{Physical review
+  letters}, vol.~85, no.~2, p. 461, 2000.
+
+\bibitem{kaiser2002information}
+A.~Kaiser and T.~Schreiber, ``Information transfer in continuous processes,''
+  \emph{Physica D: Nonlinear Phenomena}, vol. 166, no. 1-2, pp. 43--62, 2002.
+
+\bibitem{beirlant1997nonparametric}
+J.~Beirlant, E.~J. Dudewicz, L.~Gy{\"o}rfi, and E.~C. Van~der Meulen,
+  ``Nonparametric entropy estimation: An overview,'' \emph{International
+  Journal of Mathematical and Statistical Sciences}, vol.~6, no.~1, pp. 17--39,
+  1997.
+
+\bibitem{marschinski2002analysing}
+R.~Marschinski and H.~Kantz, ``Analysing the information flow between financial
+  time series,'' \emph{The European Physical Journal B-Condensed Matter and
+  Complex Systems}, vol.~30, no.~2, pp. 275--281, 2002.
+
+\bibitem{ito2011extending}
+S.~Ito, M.~E. Hansen, R.~Heiland, A.~Lumsdaine, A.~M. Litke, and J.~M. Beggs,
+  ``Extending transfer entropy improves identification of effective
+  connectivity in a spiking cortical network model,'' \emph{PloS one}, vol.~6,
+  no.~11, p. e27431, 2011.
+
+\bibitem{sumioka2008learning}
+H.~Sumioka, Y.~Yoshikawa, and M.~Asada, ``Learning of joint attention from
+  detecting causality based on transfer entropy,'' \emph{Journal of Robotics
+  and Mechatronics}, vol.~20, no.~3, p. 378, 2008.
+
+\bibitem{he2017comparison}
+J.~He and P.~Shang, ``Comparison of transfer entropy methods for financial time
+  series,'' \emph{Physica A: Statistical Mechanics and its Applications}, vol.
+  482, pp. 772--785, 2017.
+
+\bibitem{madulara2012eeg}
+M.~Madulara, P.~Francisco, S.~Nawang, D.~Arogancia, C.~Cellucci, P.~Rapp, and
+  A.~Albano, ``Eeg transfer entropy tracks changes in information transfer on
+  the onset of vision,'' in \emph{International Journal of Modern Physics:
+  Conference Series}, vol.~17.\hskip 1em plus 0.5em minus 0.4em\relax World
+  Scientific, 2012, pp. 9--18.
+
+\bibitem{lizier2011multivariate}
+J.~T. Lizier, J.~Heinzle, A.~Horstmann, J.-D. Haynes, and M.~Prokopenko,
+  ``Multivariate information-theoretic measures reveal directed information
+  structure and task relevant changes in fmri connectivity,'' \emph{Journal of
+  computational neuroscience}, vol.~30, no.~1, pp. 85--107, 2011.
+
+\bibitem{thivierge2014scale}
+J.-P. Thivierge, ``Scale-free and economical features of functional
+  connectivity in neuronal networks,'' \emph{Physical Review E}, vol.~90,
+  no.~2, p. 022721, 2014.
+
+\bibitem{rodewald2015using}
+J.~Rodewald, J.~Colombi, K.~Oyama, and A.~Johnson, ``Using
+  information-theoretic principles to analyze and evaluate complex adaptive
+  supply network architectures,'' \emph{Procedia Computer Science}, vol.~61,
+  pp. 147--152, 2015.
+
+\bibitem{fernandez2006role}
+P.~Fern{\'a}ndez and R.~V. Sol{\'e}, ``The role of computation in complex
+  regulatory networks,'' in \emph{Power laws, scale-free networks and genome
+  biology}.\hskip 1em plus 0.5em minus 0.4em\relax Springer, 2006, pp.
+  206--225.
+
+\bibitem{sumioka2007causality}
+H.~Sumioka, Y.~Yoshikawa, and M.~Asada, ``Causality detected by transfer
+  entropy leads acquisition of joint attention,'' in \emph{Development and
+  Learning, 2007. ICDL 2007. IEEE 6th International Conference on}.\hskip 1em
+  plus 0.5em minus 0.4em\relax IEEE, 2007, pp. 264--269.
+
+\bibitem{polani2009information}
+D.~Polani, ``Information: currency of life?'' \emph{HFSP journal}, vol.~3,
+  no.~5, pp. 307--316, 2009.
+
+\bibitem{lizier2008local}
+J.~T. Lizier, M.~Prokopenko, and A.~Y. Zomaya, ``Local information transfer as
+  a spatiotemporal filter for complex systems,'' \emph{Physical Review E},
+  vol.~77, no.~2, p. 026110, 2008.
+
+\bibitem{silverman1986density}
+B.~W. Silverman, \emph{Density estimation for statistics and data
+  analysis}.\hskip 1em plus 0.5em minus 0.4em\relax CRC press, 1986, vol.~26.
+
+\bibitem{kraskov2004estimating}
+A.~Kraskov, H.~St{\"o}gbauer, and P.~Grassberger, ``Estimating mutual
+  information,'' \emph{Physical review E}, vol.~69, no.~6, p. 066138, 2004.
+
+\bibitem{gopinath2017human}
+D.~Gopinath, S.~Jain, and B.~D. Argall, ``Human-in-the-loop optimization of
+  shared autonomy in assistive robotics,'' \emph{IEEE Robotics and Automation
+  Letters}, vol.~2, no.~1, pp. 247--254, 2017.
+
+\bibitem{tsui2011want}
+K.~M. Tsui, D.-J. Kim, A.~Behal, D.~Kontak, and H.~A. Yanco, ``“i want
+  that”: Human-in-the-loop control of a wheelchair-mounted robotic arm,''
+  \emph{Applied Bionics and Biomechanics}, vol.~8, no.~1, pp. 127--147, 2011.
+
+\bibitem{dragan2013policy}
+A.~D. Dragan and S.~S. Srinivasa, ``A policy-blending formalism for shared
+  control,'' \emph{The International Journal of Robotics Research}, vol.~32,
+  no.~7, pp. 790--805, 2013.
+
+\bibitem{argall2013machine}
+B.~D. Argall, ``Machine learning for shared control with assistive machines,''
+  in \emph{Proceedings of ICRA Workshop on Autonomous Learning: From Machine
+  Learning to Learning in Real world Autonomous Systems, Karlsruhe, Germany},
+  2013.
+
+\bibitem{erlien2016shared}
+S.~M. Erlien, S.~Fujita, and J.~C. Gerdes, ``Shared steering control using safe
+  envelopes for obstacle avoidance and vehicle stability,'' \emph{IEEE
+  Transactions on Intelligent Transportation Systems}, vol.~17, no.~2, pp.
+  441--451, 2016.
+
+\bibitem{gold2009information}
+K.~Gold, ``An information pipeline model of human-robot interaction,'' in
+  \emph{Proceedings of the 4th ACM/IEEE international conference on Human robot
+  interaction}.\hskip 1em plus 0.5em minus 0.4em\relax ACM, 2009, pp. 85--92.
+
+\bibitem{gopinath2018dynamic}
+D.~Gopinath and B.~Argall, ``Dynamic neural fields for short-term behavior
+  recognition using motion cues,'' in \emph{In Proceedings of HRI 2018 Workshop
+  on Social Human-Robot Interaction of Human-care Service}.\hskip 1em plus
+  0.5em minus 0.4em\relax ACM, 2018.
+
+\bibitem{khatib1986real}
+O.~Khatib, ``Real-time obstacle avoidance for manipulators and mobile robots,''
+  in \emph{Autonomous robot vehicles}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Springer, 1986, pp. 396--404.
+
+\bibitem{lizier2014jidt}
+J.~T. Lizier, ``Jidt: An information-theoretic toolkit for studying the
+  dynamics of complex systems,'' \emph{Frontiers in Robotics and AI}, vol.~1,
+  p.~11, 2014.
+
+\end{thebibliography}

@@ -4,7 +4,7 @@ clear all; clc; close all;
 clear rosbag_wrapper;
 clear ros.Bag;
 %%
-bagpath = '/home/deepak/Desktop/PaperSubmissions/IROS2018/Code/';
+bagpath = '/home/deepak/Desktop/Research/PaperSubmissions/IROS2018/Code/';
 folder = 'AllBAGFILES';
 num_sub = 3;
 global bagfile start_time;
@@ -35,17 +35,22 @@ fnames = dir(strcat(bagpath, folder));
 numfids = length(fnames);
 count = 0;
 frac_active = [];
+
 uv_all = cell(numfids-3, 1);
 alpha_all = cell(numfids-3, 1);
 gv_all = cell(numfids-3, 1);
 gp_all = cell(numfids-3, 1);
 ms_all = cell(numfids-3, 1);
+tt_all = cell(numfids-3, 1);
 ig_all = cell(numfids-3, 1);
+pos_all = cell(numfids-3, 1);
+rot_all = cell(numfids-3, 1);
 interface_all = cell(numfids-3, 1);
 task_all = cell(numfids-3, 1);
+
 ph0count = 0;
 %%
-for i=3:numfids-4
+for i=3:numfids-3
     filename = fnames(i).name;
     temp = filename; filename(end-3:end) = []; %remove .bag extension
     
@@ -74,6 +79,9 @@ for i=3:numfids-4
     bagfile.info();
     get_start_time();
     
+    %trial_time:
+    total_time = bagfile.time_end - start_time;
+    
     %get user_vel
     user_vel_ts = get_user_vel();
     
@@ -98,6 +106,32 @@ for i=3:numfids-4
         gp_upsampled(j, :) = interp1(gp_ts(end, :), gp_ts(j, :), user_vel_ts(end, :), 'linear', 'extrap');
     end
     
+    %get eef position trajectory.
+    
+    tree = ros.TFTree(bagfile);
+    tree.allFrames();
+    source_frame = 'mico_link_base';
+    target_frame = 'mico_link_hand';
+%     deltat = 0.01;
+%     times = (tree.time_begin:deltat:tree.time_end-1)';
+%     t = times-start_time;
+%     first_t = find(t < 0); first_t = first_t(end) + 1;
+%     times(1:first_t) = [];
+%     times = user_vel_ts(end, :)' + start_time; %query tf at same time stamps as user_vel
+    % create timestamps for tf. Kinda funny because of tf api issues in
+    % matlab
+    tftimes = user_vel_ts(end, :)' + start_time;
+    tftimes(tftimes > (tree.time_end - 1)) = tree.time_end - 1;
+    tftimes(tftimes < (tree.time_begin + 1)) = tree.time_begin + 1; 
+    mico_xyz = tree.lookup(source_frame, target_frame, tftimes);
+    positions = zeros(3, length(mico_xyz));
+    orientations = zeros(4, length(mico_xyz));
+    for ii=1:length(mico_xyz)
+        positions(:, ii) = mico_xyz(ii).translation;
+        orientations(:, ii) = mico_xyz(ii).rotation;                      
+    end
+
+    %%
     
     uv_all{i-2} = user_vel_ts;
     alpha_all{i-2} = alpha_upsampled;
@@ -105,16 +139,19 @@ for i=3:numfids-4
     ms_all{i-2}= ms;
     ig_all{i-2} = intended_goal;
     gp_all{i-2} = gp_upsampled;
+    tt_all{i-2} = total_time;
+    pos_all{i-2} = positions;
+    rot_all{i-2} = orientations;
     
     if strcmp(filename(8:9), 'J2')
         interface_all{i-2} = 1;
     else
         interface_all{i-2} = 2;
     end
-    if strcmp(filename(10:11), 'RE')
+    if strcmp(filename(6:7), 'RE')
         task_all{i-2} = 1;
     else
-        task_all{i-2} = 2;
+        task_all{i-2} = 2; 
     end
     
     
@@ -141,13 +178,16 @@ end
 
 %%
 ms_all(cellfun(@isempty, gv_all)) = [];
+tt_all(cellfun(@isempty, gv_all)) = [];
 uv_all(cellfun(@isempty, uv_all)) = [];
 alpha_all(cellfun(@isempty, alpha_all)) = [];
+ig_all(cellfun(@isempty, ig_all)) = [];
 gv_all(cellfun(@isempty, gv_all)) = [];
 gp_all(cellfun(@isempty, gp_all)) = [];
 interface_all(cellfun(@isempty, interface_all)) = [];
 task_all(cellfun(@isempty, task_all)) = [];
-
+pos_all(cellfun(@isempty, pos_all)) = [];
+rot_all(cellfun(@isempty, rot_all)) = [];
 
 %%
 % 

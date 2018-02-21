@@ -43,7 +43,7 @@ teCalc=javaObject('infodynamics.measures.continuous.kraskov.TransferEntropyCalcu
 teCalc.initialise(1,sourceDim,destDim); % Use history length 1 (Schreiber k=1)
 teCalc.setProperty('k', '4'); % Use Kraskov parameter K=4 for 4 nearest points
 teCalc.setObservations(octaveToJavaDoubleMatrix(sourceMVArray), octaveToJavaDoubleMatrix(destMVArray));
-% Perform calculation with correlated source:
+% Perform calculation with corelated source:
 result = teCalc.computeAverageLocalOfObservations();
 % Note that the calculation is a random variable (because the generated
 %  data is a set of random variables) - the result will be of the order
