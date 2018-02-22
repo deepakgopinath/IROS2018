@@ -4,7 +4,7 @@ clear all; clc; close all;
 clear rosbag_wrapper;
 clear ros.Bag;
 %%
-bagpath = '/home/deepak/Desktop/Research/PaperSubmissions/IROS2018/Code/';
+bagpath = '/home/deepak/Desktop/PaperSubmissions/IROS2018/Code/';
 folder = 'AllBAGFILES';
 num_sub = 3;
 global bagfile start_time;
