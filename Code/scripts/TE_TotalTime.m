@@ -28,10 +28,10 @@ pval_list = zeros(length(alpha_all), 1);
 %%
 for jj=1:num_sub
     for i=init_sub_markers(jj):sub_markers(jj) %all trials for a specific subjetc. 
-%         if interface_all{i} == ha_id || task_all{i} == po_id %if it is headarray or pouring skip. only interested in joystick and reaching
-%             continue
-%         end
-        if ms_all{i} == -999
+        if interface_all{i} == ha_id  %if it is headarray or pouring skip. only interested in joystick and reaching
+            continue
+        end
+        if ms_all{i} == -999 %if failed trial skip as well. 
             global_TE_list(i) = -999;
             continue;
         end
@@ -71,13 +71,13 @@ for jj=1:num_sub
         global_TE_list(i) = global_TE;
         local_TE = teCalc.computeLocalOfPreviousObservations();
         
-        repeats = 1000;
+        repeats = 100;
         nullDist = teCalc.computeSignificance(repeats);
         empCalc=javaObject('infodynamics.utils.EmpiricalMeasurementDistribution', nullDist.distribution, global_TE);
         fprintf('The p-value is %f for trial %d\n', empCalc.pValue, i);
 %         distribution = javaMatrixToOctave(nullDist.distribution);
 %         pvalue = sum(distribution >= nullDist.actualValue)/length(distribution);
-        pval_list(i) = empCalc.pvalue;
+        pval_list(i) = empCalc.pValue;
     %% plot figure. 
 %         figure; hold on; grid on;
 %         plot(ts, local_TE, 'g', 'LineWidth', 2.0); 
@@ -99,7 +99,7 @@ end
 % grid on;
 
 %%
-% load('interface_task_TE_new.mat'); load('new_data_file.mat');
+load('interface_task_TE_new.mat'); load('new_data_file.mat');
 % 
 % %%
 % figure;
@@ -111,14 +111,14 @@ end
 % scatter(hareTElist(hareTElist ~= 0 & hareTElist ~= -999), cell2mat(tt_all(hareTElist ~= 0 & hareTElist ~= -999)), 'r', 'filled', 'd');
 % scatter(hapoTElist(hapoTElist ~= 0 & hapoTElist ~= -999), cell2mat(tt_all(hapoTElist ~= 0 & hapoTElist ~= -999)), 'b', 'filled', 'd');
 % %%
-% % %% Linear Regression for each interface-task type. 
-% % pred = j2reTElist(j2reTElist ~= 0);
-% % resp = cell2mat(tt_all(j2reTElist ~= 0));
-% % [fitobject, gof] = fit(pred, resp, 'poly1', 'Robust', 'LAR');
-% %%
-% pred = j2reTElist(j2reTElist ~= 0 & j2reTElist ~= -999);
-% resp = cell2mat(tt_all(j2reTElist ~= 0 & j2reTElist ~= -999));
+% %% Linear Regression for each interface-task type. 
+% pred = j2reTElist(j2reTElist ~= 0);
+% resp = cell2mat(tt_all(j2reTElist ~= 0));
 % [fitobject, gof] = fit(pred, resp, 'poly1', 'Robust', 'LAR');
+% %%
+pred = j2reTElist(j2reTElist ~= 0 & j2reTElist ~= -999);
+resp = cell2mat(tt_all(j2reTElist ~= 0 & j2reTElist ~= -999));
+[fitobject, gof] = fit(pred, resp, 'poly1', 'Robust', 'LAR');
 % %%
 % pred = j2poTElist(j2poTElist ~= 0 & j2poTElist ~= -999);
 % resp = cell2mat(tt_all(j2poTElist ~= 0 & j2poTElist ~= -999));
