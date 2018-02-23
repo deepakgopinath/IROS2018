@@ -103,14 +103,14 @@ load('interface_task_TE_new.mat'); load('new_data_file.mat');
 % 
 % %%
 % figure;
-% hold on; grid on;
-% scatter(j2reTElist(j2reTElist ~= 0 & j2reTElist ~= -999), cell2mat(tt_all(j2reTElist ~= 0 & j2reTElist ~= -999)), 'r', 'filled');
+hold on; grid on;
+scatter(j2reTElist(j2reTElist ~= 0 & j2reTElist ~= -999), cell2mat(tt_all(j2reTElist ~= 0 & j2reTElist ~= -999)), 'r', 'filled');
 % scatter(j2poTElist(j2poTElist ~= 0 & j2poTElist ~= -999), cell2mat(tt_all(j2poTElist ~= 0 & j2poTElist ~= -999)), 'b', 'filled');
-% %%
-% figure; hold on; grid on;
-% scatter(hareTElist(hareTElist ~= 0 & hareTElist ~= -999), cell2mat(tt_all(hareTElist ~= 0 & hareTElist ~= -999)), 'r', 'filled', 'd');
-% scatter(hapoTElist(hapoTElist ~= 0 & hapoTElist ~= -999), cell2mat(tt_all(hapoTElist ~= 0 & hapoTElist ~= -999)), 'b', 'filled', 'd');
-% %%
+%%
+figure; hold on; grid on;
+scatter(hareTElist(hareTElist ~= 0 & hareTElist ~= -999), cell2mat(tt_all(hareTElist ~= 0 & hareTElist ~= -999)), 'r', 'filled', 'd');
+scatter(hapoTElist(hapoTElist ~= 0 & hapoTElist ~= -999), cell2mat(tt_all(hapoTElist ~= 0 & hapoTElist ~= -999)), 'b', 'filled', 'd');
+%%
 % %% Linear Regression for each interface-task type. 
 % pred = j2reTElist(j2reTElist ~= 0);
 % resp = cell2mat(tt_all(j2reTElist ~= 0));

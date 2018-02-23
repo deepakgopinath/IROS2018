@@ -58,10 +58,32 @@ Data preprocessing notes:
 1. 
 1. Just look at joystick. Look at active information storage multivariate. Figure out the best embedding. Use it in TEMultivariate calculator. Do surrogate analysis for each trial? DONE. Pipeline is there. 
 
-2. Try ensemble method. add each trial as an observation and compute TE across all available data for a subject - TODO. Pool all data from each subject to analysis. 
+2. Try ensemble method. add each trial as an observation and compute TE across all available data for a subject - TODO. Pool all data from each subject to analysis - DONE. Significant effects for J-RE combination. 
 
 3. Read Kraskov paper. Read other papers to see how data is reported. 
    a. Correlations between the metrics and other task related metrics. Such as task compleition time for each trial and TE for each trial?
+  Minor relationship between TE and total task completion time - Computein TE for fixed embedding, with surrogate. Can use it for correlation between TE and other task metric.s 
+
+
+HUMAN TO ROBOT.
+
+
+
+FOCUS on only joystcik. Since it is continuous. HA needs mixed calcultors, since one of the signals would be discrete where as the other might be continuous. 
+
+Think about alternate signals to analyse for. 
+
+Can look at what contibutes to intent inference the most. 
+1. Directedness?
+2. Alignment?
+3. distance? Maybe gets a sense of how people try to convey intent the most and therefore can weight them differently at different times. ???
+
+
+ROBOT TO HUMAN":
+
+ Work on altering the introduction a little bit:
+
+
 
 ##############################################################################################
 
